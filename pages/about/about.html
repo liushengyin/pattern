@@ -1,0 +1,34 @@
+<ion-content>
+    <div class="logo">
+        消息发送
+    </div>
+    <form #messageForm="ngForm" novalidate>
+        <div class="input-wrap">
+      <div class="input-inner">
+        <input type="text" [(ngModel)]="message.username" type="text"  class="input-text" placeholder="请输入一配云帐号" name="username" #username="ngModel" required>
+      </div>
+    </div>
+    <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+            请输入用户名
+    </p>
+        
+    <div class="input-wrap">
+        <div class="input-inner">
+          <input [(ngModel)]="message.content" (keyup.enter)="sendMessage(messageForm)" placeholder="请输入消息内容" name="content" type="text" #content="ngModel"  class="input-text" required> 
+        </div>
+     </div>
+    <p ion-text [hidden]="content.valid || submitted == false" color="danger" padding-left>
+            请输入信息
+    </p>
+    <div  class="finish-button" (click)="sendMessage(messageForm)" type="submit">发送</div>
+
+    </form>
+    <button ion-button block (click)="getPrinterList()">getPrinterList</button>
+    <div *ngFor="let item of printerList" >
+        <h2>{{item.realname}}</h2>
+        <div *ngFor="let printer of item.printers" (click)="startPrint(item.from, printer)">
+            {{printer.printerName}}
+        </div>
+    </div>
+
+</ion-content>

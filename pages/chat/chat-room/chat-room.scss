@@ -1,0 +1,110 @@
+page-chat-room {
+    .content {
+      background: #E7E7E7;
+    }
+    .right {
+        text-align: right;
+    }
+    .chat-item {
+        padding: 5px;
+        background: white;
+        background-color: white;
+        width: 80%;
+        float: right;
+        box-shadow: rgba(0,0,0,0.15) 0 0 9px;
+        border-radius: 5px;
+    }
+    // toolbar
+    .chat-toolbar {
+        min-height: 48px;
+        background: #f6f6f6;
+        border-top: 1px solid rgba(0,0,0,0.12);
+        display: flex;
+        align-items: center;
+        .chat-input {
+            background: white;
+            height: 36px;
+            padding: 0 10px;
+            flex-grow: 1;
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.12);
+        }
+        .icon {
+            width: 13.89%;
+            font-size: 2.5em;
+            text-align: center;
+            color: rgba(0,0,0,0.54);
+            &:last-child {
+                width: 7.47%;
+                margin-right: 3.7%;
+            }
+        }
+    }
+    // message
+    .message-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 10px 0;
+        .message-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 8px 16px 8px 0;
+            align-self: baseline;
+        }
+        .message-content {
+            background: white;
+            width: 80%;
+            padding: 8px;
+            border-radius: 8px;
+            min-height: 36px;
+            box-shadow: rgba(0,0,0,0.15) 1px 1px 1px 0px;
+            position: relative;
+            font-family: "Ionicons";
+            &:before {
+                position: absolute;
+                top: 6px;
+                left: -6px;
+                content: "\f282";
+                display: inline-block;
+                color: white;
+                font-size: 1.6em;
+            }
+        }
+    }
+    .message-right {
+        justify-content: flex-end;
+        .message-avatar {
+            margin: 8px 0px 8px 16px;
+        }
+        .message-content {
+            background: #D1F1FF;
+            box-shadow: rgba(0,0,0,0.15) -1px 1px 1px 0px;
+            &:before {
+                color: #D1F1FF;
+                left: initial;
+                right: -5px;
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .emoji-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        background: #f6f6f6;
+        font-size: 2.6rem;
+        height: 144px;
+        padding: 0px 10px;
+        overflow-y: scroll;
+        text-align: center;
+        .emoji-item {
+            width: 14.28%;
+            line-height: 48px;
+        }
+    }
+    .open-emojs {
+        height: 144px;
+    }
+}

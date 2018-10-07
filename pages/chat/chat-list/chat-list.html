@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>消息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="chat-item" *ngFor="let item of chatList" (click)="toChatRoom(item)">
+    <img src="assets/icon/favicon.ico">
+    <div class="content-wrap">
+      <div class="content">
+        <div class="text1 hide-text-overflow">{{item.title}}</div>
+        <div class="text2 no-shrink">{{item.time | date:"MM-dd hh:mm"}}</div>
+      </div>
+      <div class="content">
+      <div class="text2 hide-text-overflow">{{item.contentText}}</div>
+      <div class="badage" *ngIf="item.noReadNum > 0">{{item.noReadNum}}</div>
+      </div>
+    </div>
+  </div>
+
+<!--   <div class="chat-item">
+    <img src="assets/icon/favicon.ico">
+    <div class="content-wrap">
+      <div class="content">
+        <div class="text1 hide-text-overflow">item.senderName</div>
+        <div class="text2 no-shrink">item.time | date:"MM-dd hh:mm"</div>
+      </div>
+      <div class="content">
+      <div class="text2 hide-text-overflow">item.contentText</div>
+      <div class="badage">item.noReadNum</div>
+      </div>
+    </div>
+  </div> -->
+
+</ion-content>

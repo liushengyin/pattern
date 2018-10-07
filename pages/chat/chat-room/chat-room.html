@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<div class="message-list">
+<div *ngFor="let item of messages" mySpy class="message-wrap" [class.message-right]="item.type">
+    <div class="message-avatar" *ngIf="!item.type">
+        <img src="{{item.avatar}}">
+    </div>
+    <div class="message-content">
+        {{item.data}}
+        <img mgIf="item.imgSrc" src={{item.imgSrc}}>
+    </div>
+    <div class="message-avatar" *ngIf="item.type">
+        <img src="assets/icon/favicon.ico">
+    </div>
+</div>
+<div #toView [class.open-emojs]='openEmojs'></div>
+</div>
+</ion-content>
+
+<ion-footer>
+    <div class="chat-toolbar">
+        <ion-icon name="ios-happy-outline" (click)="clickEmojs()"></ion-icon>
+        <!-- <ion-icon name="ios-mic-outline"></ion-icon> -->
+        <input type="text" class="chat-input" #box (focus)="openEmojs=false" (keyup.enter)="sendMessage(box.value);box.value=''" [(ngModel)]="message"/>
+        <!-- <ion-icon name="ios-happy-outline" (click)="openEmojs = !openEmojs"></ion-icon> -->
+        <!-- <ion-icon *ngIf="!box.value" name="ios-add-circle-outline" (click)="localImg()"></ion-icon> -->
+        <!-- <ion-icon *ngIf="box.value" name="ios-send-outline" (click)="sendMessage(box.value);box.value=''"></ion-icon> -->
+        <ion-icon name="ios-send-outline" (click)="sendMessage(box.value);box.value=''"></ion-icon>
+    </div>
+    <input id="inputImg" type="file" accept="image/*"  capture="camera" name="inputImg" style="display: none;" (change)="AddlocalImg($event)" />
+    <div class="emoji-wrap" *ngIf="openEmojs">
+        <div class="emoji-item" *ngFor="let item of emoji" (click)="box.value = box.value + ' ' + item + ' ' ">
+            {{item}}
+        </div>
+    </div>
+</ion-footer>

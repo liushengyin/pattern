@@ -1,0 +1,24 @@
+<ion-content>
+
+    <form #loginForm="ngForm" novalidate>
+        <div class="input-wrap">
+      <div class="input-inner">
+        <input type="text" [(ngModel)]="login.username" type="text"  class="input-text" placeholder="一配云帐号／手机号" name="username" #username="ngModel" required>
+      </div>
+    </div>
+    <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+            请输入用户名
+    </p>
+        
+    <div class="input-wrap">
+        <div class="input-inner">
+          <input [(ngModel)]="login.password" (keyup.enter)="onLogin(loginForm)" placeholder="请输入密码" name="password" type="password" #password="ngModel"  class="input-text" required> 
+        </div>
+     </div>
+    <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+            请输入密码
+    </p>
+    <div  class="finish-button" (click)="onLogin(loginForm)" type="submit">登录</div>
+    </form>
+
+</ion-content>

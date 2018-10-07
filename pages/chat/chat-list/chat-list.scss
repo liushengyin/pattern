@@ -1,0 +1,69 @@
+page-chat-list {
+ .chat-item {
+    display: flex;
+    height: 72px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    img {
+        width: 40px;
+        height: 40px;
+        margin: 16px;
+      }
+    .content-wrap {
+        flex-grow: 2;
+        padding: 16px 16px 16px 0;
+        width: calc(100% - 72px);
+    }
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .text1 {
+            font-size: 1.8rem;
+            color: rgba(0,0,0,0.87);
+        }
+        .text2 {
+            color: rgba(0,0,0,0.54);
+            font-size: 1.6rem;
+        }
+        .badage {
+            color: white;
+            background: #F23326;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+        .no-shrink {
+            flex-shrink: 0;
+        }
+        .hide-text-overflow {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+  }
+
+
+  .seller-action {
+    align-self: center;
+    padding: 4px 10px;
+    border: 1px solid;
+    color: #3e99ff;
+    border-radius: 4px;
+    min-width: 60px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .seller-action-in {
+    align-self: center;
+    padding: 4px 10px;
+    border: 1px solid;
+    color: #3e99ff;
+    border-radius: 4px;
+    min-width: 60px;
+    font-size: 1rem;
+    color: #f52229;
+  }
+}

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+      <ion-buttons right>
+        <button ion-button icon-only (click)="toChatListPage()">
+          <ion-icon name="ios-chatboxes-outline"></ion-icon>
+          <div *ngIf="unreadNumDynamicNews == 0"></div>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <button ion-button (click)="toChatListPage()">
+    ChatListPage
+  </button>
+  <button ion-button (click)="toChatRoomPage()">
+    Chat
+  </button>
+  <button ion-button (click)="login()">login</button>
+  <button ion-button (click)="logout()">logout</button>
+  <button ion-button (click)="doSomeThings()">doSomeThings</button>
+  <ion-badge>
+  {{unreadNumDynamicNews}}
+  </ion-badge>
+</ion-content>
